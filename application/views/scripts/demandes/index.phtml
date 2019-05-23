@@ -1,0 +1,52 @@
+
+
+<?php
+//var_dump($this->lesdemandes);
+?>
+
+<br /><br />
+<div id="view-content">
+    <p><h3>Liste des <b>demandes</h3></b>
+</div>
+<a href="<?php echo $this->url(array('controller' => 'demandes', 'action' => 'ajouter')); ?>">Ajouter une demandes</a> 
+<table border="6">
+    <h3><tr>
+            <th>Num de la demande</th>
+
+            <th> Num client</th>
+
+            <th> type demande</th>
+
+            <th> date limite</th>
+
+        </tr>
+
+        </html>
+
+        <?php
+        foreach ($this->lesdemandes as $unedemandes) {
+            ?>
+            <tr>
+                <td><?php echo $unedemandes->NUM_DEM; ?></td></td>
+
+                <td><?php echo $unedemandes->NUM_CLI; ?></td></td>
+
+                <td><?php echo $unedemandes->TYPE_DEM; ?></td></td>
+
+                <td><?php echo $unedemandes->DATE_LIMITE; ?></td></td>
+
+
+
+                <td><a href="<?php echo $this->url(array('controller' => 'demandes', 'action' => 'modifier', 'NUM_DEM' => $unedemandes->NUM_DEM)); ?>">Modifier</a></td>
+                <td><a href="<?php echo $this->url(array('controller' => 'demandes', 'action' => 'supprimer', 'NUM_DEM' => $unedemandes->NUM_DEM)); ?>">Supprimer</a></td>
+
+            </tr>
+            <?php
+        }
+        ?>
+    </h3></table> <?php /* <td><a href="<?php echo $this->url(array('controller' => 'appartements', 'action' => 'supprimer', 'NUMAPPART'=>$unappartement->NUMAPPART)); ?>">Supprimer</a></td>
+          <td><a href="<?php echo $this->url(array('controller' => 'appartements', 'action' => 'proprietaire', 'NUMAPPART'=>$unappartement->NUMAPPART)); ?>">Détails Propriétaire</a></td>
+          <td><a href="<?php echo $this->url(array('controller' => 'appartements', 'action' => 'locataire', 'NUMEROLOC'=>$unappartement->NUMEROLOC)); ?>">Détails Locataire</a></td>
+         * 
+         *  */ ?>
+ 

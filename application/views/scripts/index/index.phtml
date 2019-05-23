@@ -1,0 +1,28 @@
+<div id="welcome">
+    <h1>Decouverte de Zend Framework</h1>
+
+    <h3>Projet ZF1-FromScratch</h3>
+
+    <h2><p>Locataire : 
+    <a href="<?php echo $this->url(array('controller' => 'locataires', 'action' => 'index'));?>"><button>Afficher</button></a>
+    <a href="<?php echo $this->url(array('controller' => 'locataires', 'action' => 'ajouter')); ?>"><button>Ajouter</button></a></br> </p>
+
+
+    <p>Appartements
+        <a href="<?php echo $this->url(array('controller' => 'appartements', 'action' => 'index')); ?>"><button>Afficher</button></a>
+        <a href="<?php echo $this->url(array('controller' => 'appartements', 'action' => 'ajouter')); ?>"><button>Ajouter</button></a>
+     <a href="<?php echo $this->url(array('controller' => 'recherche', 'action' => 'rechercheappart')); ?>"><button>Recherche</button></a></p>
+
+    <p>Propriétaires
+        <a href="<?php echo $this->url(array('controller' => 'proprietaires', 'action' => 'index')); ?>"><button>Afficher</button></a></p>
+    
+    <p>Visiteurs
+    <a href="<?php echo $this->url(array('controller' => 'visiter', 'action' => 'index')); ?>"><button>Afficher</button></a></p></p>
+    
+    <p>Demandes
+        <a href="<?php echo $this->url(array('controller' => 'demandes', 'action' => 'index')); ?>"><button>Afficher</button></a></p>
+    
+    <p>Clients
+        <a href="<?php echo $this->url(array('controller' => 'clients', 'action' => 'index')); ?>"><button>Afficher</button></a></p>
+        
+    </h2>

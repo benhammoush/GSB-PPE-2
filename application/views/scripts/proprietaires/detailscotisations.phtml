@@ -1,0 +1,38 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+</head>
+
+
+<div id="view-content">
+    <td><a href="<?php echo $this->url(array('controller' => 'index', 'action' => 'index')); ?>"> Retour à la page accueil </a></td>
+    <h1> Voir le details des cotisations du proprietaire <?php echo $this->NUMEROPROP ?></h1>
+</div>
+
+<table border="1">
+    <tr>
+        <td>NUMAPART</td>
+        <td>LOYER</td>
+        <td>COTISATIONS</td>
+        <td>TOTALCOTISATIONS</td>
+        
+       <?php $nbLignes = 0; ?>
+        <?php foreach ($this->detailsCotisers as $detailsCotiser): ?>
+        <?php $nbLignes++; ?>
+        
+    <tr>
+        <td> <?php echo $detailsCotiser["NUMAPPART"] ?> </td>
+        <td> <?php echo $detailsCotiser["LOYER"] ?> </td>
+        <td> <?php echo $detailsCotiser["COTISATIONS"] ?> </td>
+        
+        <?php
+        if ($nbLignes == 1) {
+            echo '<td rowspan="'.count($this->detailsCotisers).'">'.$this->totalDetailsCotisers[0]["TOTALCOTISATIONS"].'</td>';
+        }
+        ?>
+    </tr>
+<?php endforeach; ?>
+        
+    </table>
+
+

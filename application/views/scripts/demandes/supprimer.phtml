@@ -1,0 +1,11 @@
+<p> Etes vous sur de vouloir supprimer la demande: 
+    ' <?php echo $this->numdemande; ?>'? 
+</p>
+
+<form action="<?php echo $this->url(array('controller' =>'demandes', 'action'=>'supprimer')); ?>" method="post">
+    <div>
+        <input type="hidden" name="NUM_DEM" value="<?php echo $this->numdemande; ?>" />
+        <input type="submit" name="supprimer" value="oui"/>
+        <input type="submit" name="supprimer" value="non"/>
+    </div>
+</form>

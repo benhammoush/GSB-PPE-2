@@ -1,0 +1,12 @@
+<p> Etes vous sur de vouloir supprimer le visiteur : 
+    ' <?php echo $this->leslocataires['NOM_LOC']." ".$this->leslocataires['PRENOM_LOC']." (identifiant:" .$this->leslocataires['NUMEROLOC'].")"; ?>'? </p>
+
+
+<form action="<?php echo $this->url(array('controller' =>'locataires', 'action'=>'supprimer')); ?>" method="post">
+    <div>
+        <input type="hidden" name="NUMEROLOC" value="<?php echo $this->leslocataires['NUMEROLOC']; ?>" />
+        <input type="submit" name="supprimer" value="Oui"/>
+        <input type="submit" name="supprimer" value="Non"/>
+    </div>
+
+</form>

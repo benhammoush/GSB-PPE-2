@@ -1,0 +1,44 @@
+<br /><br />
+<div id="view-content">
+    <p><h2><b>Propriétaires</b></h2></p>
+    <p>Cliquer içi pour : <a href=" <?php echo $this->url(array('controller'=>'proprietaires','action'=>'ajouter')) ?>"><button>Ajouter un propriétaire</button></a> </br></br>
+    <p>Cliquer içi pour : <a href=" <?php echo $this->url(array('controller'=>'proprietaires','action'=>'cotisation')) ?>"><button>Afficher les cotisations</button></a> </br></br>
+    
+ <td><a href="<?php echo $this->url(array('controller' => 'index', 'action' => 'index')); ?>"> Retour à la page accueil </a></td>
+    <table border="6">
+        <tr>
+            <th>Numero</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Adresse </th>
+            <th>Code postal </th>
+            <th>Téléphone </th>
+        </tr>
+
+
+
+
+</div>
+
+<?php
+//var_dump($this->lesproprietaires);
+
+foreach ($this->lesproprietaires as $unProprietaire) {
+    ?> 
+    <tr>
+        <td> <?php echo $unProprietaire->NUMEROPROP; ?> </td>
+        <td> <?php echo $unProprietaire->NOM; ?> </td>
+        <td> <?php echo $unProprietaire->PRENOM; ?> </td>
+        <td> <?php echo $unProprietaire->ADRESSE; ?> </td>
+        <td> <?php echo $unProprietaire->CODE_VILLE; ?> </td>
+        <td> <?php echo $unProprietaire->TEL; ?> </td>
+    </tr>
+
+    <?php } ?>
+
+
+
+</th>
+
+</table>
+    

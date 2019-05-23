@@ -1,0 +1,43 @@
+<?php 
+
+//var_dump($this->lelocataire);
+
+?>
+
+<h1>Détails du locataire : </h1></br>
+<table>
+    <tr>
+        <th>Numero du Locataire </th>
+        <th>Nom </th>   
+        <th>Prenom </th>
+        <th>Date de naissance  </th>
+        <th> Telephone </th>
+        <th> RIB </th>
+        <th> Banque </th>
+        <th> Rue de la banque </th>
+        <th> Code ville banque </th> 
+        <th> Telephone banque </th>
+    </tr></br></br>
+
+<?php
+   // TOUT EST OK 
+    foreach ($this->lelocataire as $key) {
+        ?>
+    <th><?php echo $key['NUMEROLOC']; ?></th>
+    <th><?php echo $key['NOM_LOC']; ?></th>
+    <th><?php echo $key['PRENOM_LOC']; ?></th>
+    <th><?php echo $key['DATENAISS']; ?></th>
+    <th><?php echo $key['TEL_LOC']; ?></th>
+    <th><?php echo $key['R_I_B']; ?></th>
+    <th><?php echo $key['BANQUE']; ?></th>
+    <th><?php echo $key['RUE_BANQUE']; ?></th>
+    <th><?php echo $key['CODEVILLE_BANQUE']; ?></th>
+    <th><?php echo $key['TEL_BANQUE']; ?></th>
+    
+    
+    
+    
+    <?php } ?>
+    
+</table>
+

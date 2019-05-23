@@ -1,0 +1,43 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+</head>
+
+
+<div id="view-content">
+    <td><a href="<?php echo $this->url(array('controller' => 'index', 'action' => 'index')); ?>"> Retour à la page accueil </a></td>
+
+</div>
+
+<table border="1">
+    <tr>
+        <td>Numero proprietaire</td>
+        <td>Nom</td>
+        <td>Prenom</td>
+        <td>Adresse</td>
+        <td>Code_ville</td>
+        <td>Tel</td>
+        <td>Cotisations</td>
+        
+    </tr>
+    
+    <?php
+    
+    foreach ($this->cotisers as $cotiser) :
+        ?>
+    
+            <tr>
+            <td><?php echo $cotiser["NUMEROPROP"];?></td>
+            <td><?php echo $cotiser["NOM"];?></td>
+            <td><?php echo $cotiser["PRENOM"];?></td>
+            <td><?php echo $cotiser["ADRESSE"];?></td>
+            <td><?php echo $cotiser["CODE_VILLE"];?></td>
+            <td><?php echo $cotiser["TEL"];?></td>
+            <td><?php echo $cotiser["COTISATIONS"];?></td>
+            <td><a href="<?php echo $this->url(array('controller' => 'proprietaires', 'action'=>'detailscotisations', 'NUMEROPROP'=> $cotiser["NUMEROPROP"])); ?>">Details</a></td>
+            
+   
+        </tr>
+    <?php endforeach; 
+    ?>
+</table>

@@ -1,0 +1,43 @@
+
+<div id="view-content">
+    <p><h3>Liste des <b>Visites</h3></b>
+</div>
+<a href="<?php echo $this->url(array('controller' => 'visiter', 'action' => 'ajouter')); ?>">Ajouter une demandes</a> 
+<table border="6">
+    <h3><tr>
+            <th>Numéro du client</th>
+
+            <th> Numéro de l'apartement</th>
+
+            <th> Date de visite</th>
+
+        </tr>
+
+        </html>
+
+        <?php
+        foreach ($this->lesvisites as $unevisite) {
+            ?>
+            <tr>
+                <td><?php echo $unevisite->NUM_CLI; ?></td></td>
+
+                <td><?php echo $unevisite->NUMAPPART; ?></td></td>
+
+                <td><?php echo $unevisite->DATE_VISITE; ?></td></td>
+
+
+
+
+                <td><a href="<?php echo $this->url(array('controller' => 'visiter', 'action' => 'modifier', 'NUM_CLI' => $unevisite->NUM_CLI)); ?>">Modifier</a></td>
+                <td><a href="<?php echo $this->url(array('controller' => 'visiter', 'action' => 'supprimer', 'NUM_CLI' => $unevisite->NUM_CLI, 'NUMAPPART' => $unevisite->NUMAPPART)); ?>">Supprimer</a></td>
+                    <!-- Pour Modifier et Supprimer Prendre les deux cles primaire : $unevisite->NUM_CLI ET $unevisite->NUMAPPART -->
+            </tr>
+            <?php
+        }
+        ?>
+    </h3></table> <?php /* <td><a href="<?php echo $this->url(array('controller' => 'appartements', 'action' => 'supprimer', 'NUMAPPART'=>$unappartement->NUMAPPART)); ?>">Supprimer</a></td>
+          <td><a href="<?php echo $this->url(array('controller' => 'appartements', 'action' => 'proprietaire', 'NUMAPPART'=>$unappartement->NUMAPPART)); ?>">Détails Propriétaire</a></td>
+          <td><a href="<?php echo $this->url(array('controller' => 'appartements', 'action' => 'locataire', 'NUMEROLOC'=>$unappartement->NUMEROLOC)); ?>">Détails Locataire</a></td>
+         * 
+         *  */ ?>
+ 

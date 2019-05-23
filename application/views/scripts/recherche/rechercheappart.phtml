@@ -1,0 +1,71 @@
+<br /><br />
+</br>
+<?php
+$this->title = "Resultat de la recherche";
+$this->headTitle($this->title);
+?>
+<div id="form" style="width:350px;">
+    <fieldset>
+        <legend style="color:blue;font-weight:bold;">Recherche Appartements </legend>
+        <?php
+        echo $this->form;
+        ?>
+    </fieldset>
+</div>
+<?php
+
+//var_dump($this->form); 
+$lesapparts = array();
+$lesapparts = $this->lesapparts;
+//var_dump($lesapparts);
+    if(!$lesapparts == NULL){  // restriction perettant de n'afficher le tableaux uniquement si la recherche à été effectué.
+?>
+
+
+<br/><table border="6">
+    <tr>
+
+
+        <th> Num appart</th>
+
+        <th> type appart</th>
+
+        <th> Prix location</th>
+
+        <th> Prix charge</th>
+
+        <th> Rue</th>
+
+        <th> Arrondissement</th>
+
+        <th> Etage</th>
+
+        <th> Ascenseur</th>
+
+        <th> Pr&eacuteavis</th>
+
+        <th>Date libre</th>
+        
+        <th>Num de proprietaire</th>
+
+        <th> Numero locataire</th>
+
+    </tr> 
+    <?php
+    foreach ($lesapparts as $unappartement) {
+        ?>
+        <tr>
+
+            <?php
+            foreach ($unappartement as $key => $valeur) {
+                // Affichage
+                ?> <td> <?php echo $valeur . '<br>'; ?> </td> <?php
+            }
+            ?>
+            </td>
+        </tr>
+        <?php
+    }
+    }
+    ?>
+</table>

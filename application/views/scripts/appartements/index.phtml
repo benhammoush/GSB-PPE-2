@@ -1,0 +1,77 @@
+<a href="<?php echo $this->url(array('controller' => 'index', 'action' => 'index')); ?>">Retour</a>     
+<br /><br />
+<div id="view-content">
+    <p>Liste des <b>appartements</b>
+</div>
+<p><a href="<?php echo $this->url(array('controller' => 'appartements', 'action' => 'ajouter')); ?>">Ajouter Appartements</a></p>
+<p><a href="<?php echo $this->url(array('controller' => 'recherche', 'action' => 'rechercheappart')); ?>">Recherche</a></p>
+<table border="6">
+    <tr>
+
+        <th> Num appart</th>
+
+        <th>Num de proprietaire</th>
+
+        <th> type appart</th>
+
+        <th> Prix location</th>
+
+        <th> Prix charge</th>
+
+        <th> Rue</th>
+
+        <th> Arrondissement</th>
+
+        <th> Etage</th>
+
+        <th> Ascenseur</th>
+
+        <th> Pr&eacuteavis</th>
+
+        <th>Date libre</th>
+
+        <th> Numero locataire</th>
+
+    </tr>
+
+</html>
+
+<?php
+foreach ($this->lesappartements as $unappartement) {
+    ?>
+    <tr>
+
+        <td><?php echo $unappartement->NUMAPPART; ?></td></td>
+
+        <td><?php echo $unappartement->NUMEROPROP; ?></td></td>
+
+        <td><?php echo $unappartement->TYPAPPART; ?></td></td>
+
+        <td><?php echo $unappartement->PRIX_LOC; ?></td></td>
+
+        <td><?php echo $unappartement->PRIX_CHARG; ?></td></td>
+
+        <td><?php echo $unappartement->RUE; ?></td></td>
+
+        <td><?php echo $unappartement->ARRONDISSEMENT; ?></td></td>
+
+        <td><?php echo $unappartement->ETAGE; ?></td></td>
+
+        <td><?php echo $unappartement->ASCENSEUR; ?></td></td>
+
+        <td><?php echo $unappartement->PREAVIS; ?></td></td>
+
+        <td><?php echo $unappartement->DATE_LIBRE; ?></td></td>
+
+        <td><?php echo $unappartement->NUMEROLOC; ?></td></td>
+
+        <td><a href="<?php echo $this->url(array('controller' => 'appartements', 'action' => 'modifier', 'NUMAPPART' => $unappartement->NUMAPPART)); ?>">Modifier</a></td>
+
+        <td><a href="<?php echo $this->url(array('controller' => 'appartements', 'action' => 'supprimer', 'NUMAPPART' => $unappartement->NUMAPPART)); ?>">Supprimer</a></td>
+        <td><a href="<?php echo $this->url(array('controller' => 'appartements', 'action' => 'proprietaire', 'NUMAPPART' => $unappartement->NUMAPPART)); ?>">Détails Propriétaire</a></td>
+        <td><a href="<?php echo $this->url(array('controller' => 'appartements', 'action' => 'locataire', 'NUMEROLOC' => $unappartement->NUMEROLOC)); ?>">Détails Locataire</a></td>
+    </tr>
+    <?php
+}
+?>
+</table>
