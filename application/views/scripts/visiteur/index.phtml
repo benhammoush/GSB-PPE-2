@@ -1,0 +1,15 @@
+<a href="<?php echo $this->url(array('controller' => 'index', 'action' => 'index')); ?>">Retour</a>  
+<div id="view-content">
+	<p>View script for controller <b>Visiteur</b> and script/action name <b>index</b></p>
+        <table>
+            <?php foreach ($this->lesVisiteurs as$unVisiteur) : ?>
+            <tr>
+                <td><?php echo $unVisiteur->id; ?></td>
+                <td><?php echo $unVisiteur->nom; ?></td>
+                <td><?php echo $unVisiteur->prenom; ?></td>
+                
+                
+            </tr>  
+            <?php endforeach;?>
+            </table>    
+</div>

@@ -18,4 +18,20 @@ class Application_Model_DbTable_Clients extends Zend_Db_Table_Abstract
         
         $this->insert($data);
 }
+public function modifierClients($numcli, $nomcli, $prenomcli, $adressecli, $codevillecli, $telcli) {
+         $data = array('NUM_CLI' => $numcli,
+            'NOM_CLI' => $nomcli,
+            'PRENOM_CLI' => $prenomcli,
+            'ADRESSE_CLI' => $adressecli,
+            'CODEVILLE_CLI' => $codevillecli,
+            'TEL_CLI' => $telcli,
+        );
+        /* @var $id type */
+        $this->update($data, "NUM_CLI='" . $numcli . "'");
+    }
+
+    public function supprimerClients($numcli) {
+            
+        $this->delete($data, "NUM_CLI='". $numcli ."'");
+    }
 }
